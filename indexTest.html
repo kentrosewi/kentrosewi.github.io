@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+  <title>Card-Deck Example</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/examples/blog/blog.css"/>
+  <link rel="stylesheet" href="assets/css/testCSS.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.12.0/axios.js"></script>
+
+</head>
+
+<style>
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    font-size: 14px;
+    color: #666666;
+    font-family: "Open Sans";
+  }
+</style>
+
+<body>
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+		<h1 class="display-4">A Simple Card-Deck Example</h1>
+		<p class="lead">This webpage demonstates Bootstrap cards/card-decks, as well as React components with Axios for XHR requests.</p>
+		
+		<nav class="navbar navbar-expand-lg navbar-light">
+		  <div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+			  <li class="nav-item active">
+				<a class="nav-link" href="#">IGN <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">The New York Times</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Financial</a>
+			  </li>
+			</ul>
+		  </div>
+		</nav>		
+		
+	  </div>
+	</div>
+  <div class="container">
+	<div class="card-deck" style="padding-top: 2em">
+      <div class="col-md-6 col-lg-3 pb-3">
+        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+        <div class="card card-custom bg-white border-white border-0" style="height: 450px">
+          <div class="card-custom-img" style="background-image: url(https://ubistatic19-a.akamaihd.net/resource/en-us/game/news/forhonor/fh-game/hro_keyart_rgb_web_crop_327027.jpg);"></div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">You can also set maximum height on and the card will not expand, instead a scrollbar in the card body will appear.</p>
+            <p class="card-text">Some example text to show the scrollbar.</p>
+            <p class="card-text">o elit nec te. Possim inermis antiUt sed molestie
+              antiopam. At altera facilisis mel.</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-primary">Read full article</a>
+          </div>
+        </div>
+      </div>	<!-- end card container -->  
+      <div class="col-md-6 col-lg-3 pb-3">
+        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+        <div class="card card-custom bg-white border-white border-0" style="height: 450px">
+          <div class="card-custom-img" style="background-image: url(https://static01.nyt.com/images/2018/08/31/business/31nbc1jpprint/31nbc1-facebookJumbo.jpg);"></div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">You can also set maximum height on and the card will not expand, instead a scrollbar in the card body will appear.</p>
+            <p class="card-text">Some example text to show the scrollbar.</p>
+            <p class="card-text">Lorem ipsum dolor sit mis antiopam ut eum. Eos te zril labore laboramus, quem erant nam in. Ut sed molestie
+              antiopam. At altera facilisis mel.</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-primary">Read full article</a>
+          </div>
+        </div>
+      </div>	<!-- end card container -->  
+      <div class="col-md-6 col-lg-3 pb-3">
+        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+        <div class="card card-custom bg-white border-white border-0" style="height: 450px">
+          <div class="card-custom-img" style="background-image: url(https://ubistatic19-a.akamaihd.net/resource/en-us/game/news/forhonor/fh-game/hro_keyart_rgb_web_crop_327027.jpg);"></div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">You can also set maximum height on and the card will not expand, instead a scrollbar in the card body will appear.</p>
+            <p class="card-text">Some example text to show the scrollbar.</p>
+            <p class="card-text">Lorem ipsum dolestie
+              antiopam. At altera facilisis mel.</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-primary">Read full article</a>
+          </div>
+        </div>
+      </div>	<!-- end card container -->  
+      <div class="col-md-6 col-lg-3 pb-3">
+        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+        <div class="card card-custom bg-white border-white border-0" style="height: 450px">
+          <div class="card-custom-img" style="background-image: url(https://ubistatic19-a.akamaihd.net/resource/en-us/game/news/forhonor/fh-game/hro_keyart_rgb_web_crop_327027.jpg);"></div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">You can also set maximum height on and the card will not expand, instead a scrollbar in the card body will appear.</p>
+            <p class="card-text">Some example text to show the scrollbar.</p>
+            <p class="card-text">Lorem ipsum illud luptatum no qui. Sed ea qualisque urbanitas, purto elit nec te. Possim inermis antiopam ut eum. Eos te zril labore laboramus, quem erant nam in. Ut sed molestie
+              antiopam. At altera facilisis mel.</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-primary">Read full article</a>
+          </div>
+        </div>
+      </div>	<!-- end card container -->  	  
+    </div>	<!-- end card deck -->
+	
+	<div class="card-deck" style="padding-top: 2em">
+      <div class="col-md-12 col-lg-12 pb-3">
+        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+        <div class="card card-custom bg-white border-white border-0" style="height: 450px">
+          <div class="card-custom-img" style="background-image: url(https://ubistatic19-a.akamaihd.net/resource/en-us/game/news/forhonor/fh-game/hro_keyart_rgb_web_crop_327027.jpg);"></div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">You can also set maximum height on and the card will not expand, instead a scrollbar in the card body will appear.</p>
+            <p class="card-text">Some example text to show the scrollbar.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, te vix omittam fastidii, enim paulo omnes ea has, illud luptatum no qui. Sed ea qualisque urbanitas, purto elit nec te. Possim inermis antiopam ut eum. Eos te zril labore laboramus, quem erant nam in. Ut sed molestie
+              antiopam. At altera facilisis mel.</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-primary">Read full article</a>
+          </div>
+        </div>
+      </div>	<!-- end card container -->  
+    </div>	<!-- end card deck -->	
+
+	<div class="card-deck" style="padding-top: 2em; padding-bottom: 2em">
+      <div class="col-md-6 col-lg-6 pb-3">
+        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+        <div class="card card-custom bg-white border-white border-0" style="height: 450px">
+          <div class="card-custom-img" style="background-image: url(https://ubistatic19-a.akamaihd.net/resource/en-us/game/news/forhonor/fh-game/hro_keyart_rgb_web_crop_327027.jpg);"></div>
+          <div class="card-custom-avatar">
+            <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+          </div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">You can also set maximum height on and the card will not expand, instead a scrollbar in the card body will appear.</p>
+            <p class="card-text">Some example text to show the scrollbar.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, te vix omittam fastidii, enim paulo omnes ea has, illud luptatum no qui. Sed ea qualisque urbanitas, purto elit nec te. Possim inermis antiopam ut eum. Eos te zril labore laboramus, quem erant nam in. Ut sed molestie
+              antiopam. At altera facilisis mel.</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-primary">Read full article</a>
+          </div>
+        </div>
+      </div>	<!-- end card container -->  
+      <div class="col-md-6 col-lg-6 pb-3">
+        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+        <div class="card card-custom bg-white border-white border-0" style="height: 450px">
+          <div class="card-custom-img" style="background-image: url(https://ubistatic19-a.akamaihd.net/resource/en-us/game/news/forhonor/fh-game/hro_keyart_rgb_web_crop_327027.jpg);"></div>
+          <div class="card-custom-avatar">
+            <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+          </div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">You can also set maximum height on and the card will not expand, instead a scrollbar in the card body will appear.</p>
+            <p class="card-text">Some example text to show the scrollbar.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, te vix omittam fastidii, enim paulo omnes ea has, illud luptatum no qui. Sed ea qualisque urbanitas, purto elit nec te. Possim inermis antiopam ut eum. Eos te zril labore laboramus, quem erant nam in. Ut sed molestie
+              antiopam. At altera facilisis mel.</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-primary">Read full article</a>
+          </div>
+        </div>
+      </div>	<!-- end card container --> 	  
+    </div>	<!-- end card deck -->		
+  </div> <!-- end container -->
+  
+	<footer class="blog-footer" >
+      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>  
+
+</body>
+
+</html>
