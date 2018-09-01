@@ -238,7 +238,7 @@
 	document.getElementById("searchButton").addEventListener("click", function() {
         // Loading the jQuery code
         request = new XMLHttpRequest();
-        request.open("GET", "https://newsapi.org/v2/top-headlines?sources=ign&apiKey=5be43826b30c4046b8e6e4a7bcd2e323", true);
+        request.open("GET", "https://newsapi.org/v2/top-headlines?sources=polygon&apiKey=5be43826b30c4046b8e6e4a7bcd2e323", true);
         request.send(null);
 
         request.onreadystatechange = function() {
