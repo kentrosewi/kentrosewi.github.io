@@ -14,10 +14,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.12.0/axios.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-
 </head>
 
 <style>
@@ -79,6 +78,12 @@
 	
 	
   <div class="container"> <!-- top 4 -->
+	<div class="alert alert-warning alert-dismissible" style="margin-top: 25px" role="alert">
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  <strong>Warning!</strong> This is a work in progress. I plan on building this out in a modular, reusable fashion using React. Right now the page has each Bootstrap card declared in HTML.
+	</div>
+
+  
 	<div class="card-deck" style="padding-top: 2em">
       <div class="col-md-6 col-lg-3 pb-3">
         <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
@@ -235,27 +240,29 @@
 </body>
 
 <script>
-	document.getElementById("searchButton").addEventListener("click", function() {
+	$(document).ready(function() {
         // Loading the jQuery code
-        request = new XMLHttpRequest();
-        request.open("GET", "https://newsapi.org/v2/top-headlines?sources=polygon&apiKey=5be43826b30c4046b8e6e4a7bcd2e323", true);
-        request.send(null);
+        //request = new XMLHttpRequest();
+        //request.open("GET", "https://newsapi.org/v2/top-headlines?sources=ign&apiKey=", true);
+        //request.send(null);
 
-        request.onreadystatechange = function() {
-            if(request.readyState === 4) { // What does this even mean?
-                if(request.status === 200) {
+        //request.onreadystatechange = function() {
+            //if(request.readyState === 4) { // What does this even mean?
+                //if(request.status === 200) {
 
+					var myJSON = "{\"status\":\"ok\",\"totalResults\":10,\"articles\":[{\"source\":{\"id\":\"ign\",\"name\":\"IGN\"},\"author\":null,\"title\":\"The Fortnite Grand Final Face-Off For $225,000 - PAX West 2018 - IGN Video\",\"description\":\"One player came out on top and won the grind prize of $225,000 at PAX West 2018\",\"url\":\"http://www.ign.com/videos/2018/09/04/the-fortnite-grand-final-face-off-for-225000-pax-west-2018\",\"urlToImage\":\"https://assets1.ignimgs.com/thumbs/userUploaded/2018/9/3/fortniteblogroll-10-1536018953499_1280w.jpg\",\"publishedAt\":\"2018-09-04T00:13:00Z\"},{\"source\":{\"id\":\"ign\",\"name\":\"IGN\"},\"author\":\"Jon Ryan\",\"title\":\"Trading Places Returns to GTA Online - IGN\",\"description\":\"The ultimate comeback mode... comes... back.\",\"url\":\"http://www.ign.com/articles/2018/09/03/gta-online-trading-places-remix?abthid=5b8dbc689fa21d2336000a83\",\"urlToImage\":\"https://assets1.ignimgs.com/2018/09/03/gta-tp-01-1536015437203_1280w.jpg\",\"publishedAt\":\"2018-09-03T23:00:50Z\"},{\"source\":{\"id\":\"ign\",\"name\":\"IGN\"},\"author\":null,\"title\":\"9 Minutes of Super Mario Party Offscreen Gameplay - IGN Video\",\"description\":\"Watch as we test out Mario Party on Switch's new cooperative river survival mode!\",\"url\":\"http://www.ign.com/videos/2018/09/03/9-minutes-of-super-mario-party-offscreen-gameplay\",\"urlToImage\":\"https://assets1.ignimgs.com/thumbs/userUploaded/2018/9/2/nintendoswitchsupermariopartyartwork03-1535926103491_1280w.jpg\",\"publishedAt\":\"2018-09-03T22:27:00Z\"},{\"source\":{\"id\":\"ign\",\"name\":\"IGN\"},\"author\":null,\"title\":\"11 Minutes of The World Ends With You Nintendo Switch Gameplay - IGN Video\",\"description\":\"Check out how the beloved Square Enix DS RPG plays on the Switch!\",\"url\":\"http://www.ign.com/videos/2018/09/03/11-minutes-of-the-world-ends-with-you-nintendo-switch-gameplay\",\"urlToImage\":\"https://assets1.ignimgs.com/thumbs/userUploaded/2018/9/3/screen-shot-2018-09-03-at-32304-pm-1536013411946_1280w.png\",\"publishedAt\":\"2018-09-03T22:25:00Z\"},{\"source\":{\"id\":\"ign\",\"name\":\"IGN\"},\"author\":\"Andrew Goldfarb\",\"title\":\"We Visited a Pokemon Center at the Tallest Tower in the World - IGN\",\"description\":\"We checked out the exclusive Pokemon merchandise right in the heart of Tokyo’s Skytree town.\",\"url\":\"http://www.ign.com/articles/2018/09/03/we-visited-a-pokemon-center-at-the-tallest-tower-in-the-world\",\"urlToImage\":\"https://assets1.ignimgs.com/2018/09/03/sky1280-1536008820941_1280w.jpg\",\"publishedAt\":\"2018-09-03T21:30:00Z\"},{\"source\":{\"id\":\"ign\",\"name\":\"IGN\"},\"author\":\"Jonathon Dornbush\",\"title\":\"The Coolest Cosplay at PAX West 2018 - IGN\",\"description\":\"Pokemon, Fortnite, Spyro, and much more were represented at PAX West via cosplay this year.\",\"url\":\"http://www.ign.com/articles/2018/09/03/pax-west-2018-cosplay-fortnite-pokemon-anime-spyro-black-panther?abthid=5b8da063623c2f1a36000a86\",\"urlToImage\":\"https://assets1.ignimgs.com/2018/09/02/cosplay-blogroll-1535846958049_1280w.jpg\",\"publishedAt\":\"2018-09-03T20:57:47Z\"},{\"source\":{\"id\":\"ign\",\"name\":\"IGN\"},\"author\":\"Jesse Schedeen\",\"title\":\"Marvel's Guardians of the Galaxy Relaunch Teases Massive Cast of Characters - IGN\",\"description\":\"Marvel teases a new Guardians of the Galaxy comic featuring pretty much every cosmic hero you can think of.\",\"url\":\"http://www.ign.com/articles/2018/09/03/marvels-guardians-of-the-galaxy-relaunch-teases-massive-cast-of-characters\",\"urlToImage\":\"http://assets1.ignimgs.com/2017/05/03/rsz-1stl043643-1493835275404_1280w.jpg\",\"publishedAt\":\"2018-09-03T19:51:59Z\"},{\"source\":{\"id\":\"ign\",\"name\":\"IGN\"},\"author\":\"Jonathon Dornbush\",\"title\":\"Bloodroots Feels Like Samurai Jack Meets Hotline Miami in the Woods - PAX West 2018 - IGN\",\"description\":\"Bloodroots channels its inspirations into a fresh, satisfying action experience.\",\"url\":\"http://www.ign.com/articles/2018/09/01/bloodroots-feels-like-samurai-jack-meets-hotline-miami-in-the-woods-pax-west-2018\",\"urlToImage\":\"https://assets1.ignimgs.com/2018/09/01/dkh032du4aajcx3-1535816671209_1280w.jpg\",\"publishedAt\":\"2018-09-01T19:40:33Z\"},{\"source\":{\"id\":\"ign\",\"name\":\"IGN\"},\"author\":\"Travis Annabel\",\"title\":\"How Deep Space Nine Changed Star Trek for the Better - IGN\",\"description\":\"Opinion: 25 years on, here’s what makes the black sheep of the Star Trek family, Deep Space Nine, the best Trek.\",\"url\":\"http://www.ign.com/articles/2018/08/31/how-deep-space-nine-changed-star-trek-for-the-better\",\"urlToImage\":\"https://assets1.ignimgs.com/2018/08/31/1280-ds9-1535676662467_1280w.jpg\",\"publishedAt\":\"2018-08-31T16:35:25Z\"},{\"source\":{\"id\":\"ign\",\"name\":\"IGN\"},\"author\":\"Jesse Schedeen\",\"title\":\"The Conjuring Universe Explained: How Does The Nun Fit In? - IGN\",\"description\":\"We break down the shared horror universe that is The Conjuring, Annabelle, and The Nun, and how these movies all fit together.\",\"url\":\"http://www.ign.com/articles/2018/06/13/the-conjuring-universe-explained-what-is-the-horror-movie-franchise\",\"urlToImage\":\"http://assets1.ignimgs.com/2018/06/13/1280-conjuring-universe-1528908424436_1280w.jpg\",\"publishedAt\":\"2018-06-13T16:38:14Z\"}]}";
 					
 					for(var i = 0; i < 10; i++) {
-						var article = JSON.parse(request.responseText).articles[i];
+						//var article = JSON.parse(request.responseText).articles[i];
+						var article = JSON.parse(myJSON).articles[i];
 						document.getElementById("cardTitle" + (i + 1)).innerHTML = article.title;
 						document.getElementById("cardDescription" + (i + 1)).innerHTML = article.description;
 						document.getElementById("cardImage" + (i + 1)).style = "background-image: url(" + article.urlToImage + ");";
 						document.getElementById("button" + (i + 1)).href = article.url;
 					}
-                }
-            }
-        }
+                //}
+            //}
+        //}
     });
 </script>
 
