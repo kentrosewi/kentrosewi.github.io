@@ -1,6 +1,6 @@
 .card-custom {
   overflow: hidden;
-  min-height: 450px;
+  /*min-height: 450px;*/
   box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
 }
 
@@ -44,7 +44,7 @@
 }
 
 body {
-	background-color: #f9f7f1;
+	background-color: #f7efd4;
 }
 
 .blog-header {
