@@ -31,22 +31,17 @@
 	
     <style>
 	.iframe-container {
-	  overflow: hidden;
-	  padding-top: 56.25%;
-	  position: relative;
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
 	}
-
 	.iframe-container iframe {
-	   border: 0;
-	   height: 100%;
-	   left: 0;
-	   position: absolute;
-	   top: 0;
-	   width: 100%;
-	}  
-	/* 4x3 Aspect Ratio */
-	.iframe-container-4x3 {
-	  padding-top: 75%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
      </style>
 </head> 
@@ -95,7 +90,7 @@
                             <div class="item featured text-center">
                                 <h3 class="title">Feature Request Project</h3>
                                 <p class="summary">A sample project which allows for feature requests to be submitted by clients.</p>
-					<div class="iframe-container>
+					<div class="iframe-container">
 								<iframe src="https://www.youtube.com/embed/HdgFGZXPdYY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 	</div>
 				<div class="desc text-left">
