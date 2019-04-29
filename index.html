@@ -28,6 +28,23 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
     
 	<link rel="icon" href="http://icons.iconarchive.com/icons/iron-devil/ids-3d-icons-20/32/Ico-zilla-icon.png">
+	
+    <style>
+	.iframe-container {
+	  overflow: hidden;
+	  padding-top: 56.25%;
+	  position: relative;
+	}
+
+	.iframe-container iframe {
+	   border: 0;
+	   height: 100%;
+	   left: 0;
+	   position: absolute;
+	   top: 0;
+	   width: 100%;
+	}  
+     </style>
 </head> 
 
 <body>
@@ -74,8 +91,10 @@
                             <div class="item featured text-center">
                                 <h3 class="title">Feature Request Project</h3>
                                 <p class="summary">A sample project which allows for feature requests to be submitted by clients.</p>
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/HdgFGZXPdYY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="desc text-left">
+					<div class="iframe-container>
+								<iframe src="https://www.youtube.com/embed/HdgFGZXPdYY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                	</div>
+				<div class="desc text-left">
 									<br/>
                                     <p>This application was done outside of work and allows users to submit feature requests for different clients as well as different product areas. It could easily be extended to allow deletion of feature requests, addition of new clients, product areas, and more.</p>
 									<p>Technology used included the following:</p>
