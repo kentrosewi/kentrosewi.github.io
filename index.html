@@ -43,108 +43,107 @@
 		width: 100%;
 		height: 100%;
 	}
+	html {
+		scroll-behavior: smooth;
+	}
      </style>
 </head> 
 
 <body>
     <!-- ******HEADER****** --> 
     <header class="header">
-        <div class="container clearfix">                       
+        <div id="home" class="container clearfix">                       
             <img class="profile-image img-fluid float-left" src="assets/images/me_woods_small.png" alt="Kent Rose" />
             <div class="profile-content float-left">
                 <h1 class="name">Kent Rose</h1>
-                <h2 class="desc">Software Engineer, Gaming Enthusiast</h2>   
+                <h2 class="desc">Game Programmer</h2>
+				<h6 class="content"><p>Wisconsin, USA <i class="fas fa-map-marker-alt"></i></p></h6>
                 <ul class="social list-inline">
                     <li class="list-inline-item"><a href="https://www.linkedin.com/in/kentrose/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                     <li class="list-inline-item"><a href="https://github.com/kentrosewi" target="_blank"><i class="fab fa-github-alt"></i></a></li>    
-		</ul> 
+				</ul> 
             </div><!--//profile-->
             <a class="btn btn-cta-primary float-right" href="https://www.linkedin.com/in/kentrose/" target="_blank"><i class="fas fa-paper-plane"></i> Contact Me</a>              
         </div><!--//container-->
     </header><!--//header-->
-    
+	
+	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+			<a class="navbar-brand" href="#home">Kent Rose</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#gamedev">Game Development</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#appdev">Application Development</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#workxp">Work Experience</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
     <div class="container sections-wrapper">
         <div class="row">
             <div class="primary col-lg-8 col-12">
                 <section class="about section">
                     <div class="section-inner">
-                        <h2 class="heading">About Me</h2>
+                        <h2 class="desc">Hey there!</h2>
                         <div class="content">
-				<p>Hey everyone!</p><br/>
-				<p>I'm glad you found my page. If there's anything you should know about me, it would be the following:</p>
-							<ul>
-								<li>I love video games. Whether it's playing, making, writing about, analyzing, or listening to music from them, I enjoy it all.</li>
-								<li>My strong analytical mindset allows me to get to the root of a problem and solve it. This applies to more than just programming.</li>
-								<li>My excellent interpersonal skills allow me to work with and communicate with others efficiently.</li>
-							</ul>
+							<p>I'm Kent, a team-oriented programmer with over 5 years of experience as a professional software developer in the insurance industry.</p>
+							<p>I've been able to prove my ability to write clean and reusable code as well as navigate the intricacies of version control, estimating project timelines, mentorship, collaborating 
+							in group environments and much, much more.</p>
+							<p>Through my personal game development projects I've been able to hone my skills with Unity and have a goal of landing an entry to intermediate game developer position.</p>
+							<p>In early 2020 I decided to become a stay-at-home dad in order to raise my young daughter but will soon be re-entering the workforce as a game programmer.</p>
+
+							<p>If this sounds good to you, awesome! Check out my projects below.</p>
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
-                </section><!--//section-->
-		    
-		<section class="about section">
-                    <div class="section-inner">
-                        <h2 class="heading">What I'm Up To</h2>
-                        <div class="content">
-				<ul>
-					<li>Currently a stay-at-home dad with my 3 year old daughter!</li>
-				</ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->		    
-	
-		<div style="display: none">
-			<section class="projects section">
-			    <div class="section-inner">
-				<h2 class="heading">YouTube</h2>
-				<div class="content">
-					<div class="item featured text-center">
-						<h3 class="title">Spyro Reignited Trilogy</h3>
-						<p class="summary">Details on the now-released Switch version.</p>
-						<div class="iframe-container">
-							<iframe src="https://www.youtube.com/embed/XR_qEAz26jI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>							
-						</div>
-						<div class="desc text-left">
-							<br/>
-							<p>Creating content on YouTube is a hobby of mine, along with playing games. What better way to have fun than do both?</p>
-							<p>At the time of this video's release, the Switch version of the Spyro remakes was a few months from release. Given that the Xbox and PS4 version had been a success, I figured covering the upcoming Switch release would be a good topic.</p> 
-							<p>Not only was this because the game looked fun, but because it would perform well on YouTube.</p>
-							<p>Some of the tools I use when creating videos:</p>
-							<ul>
-								<li>HitFilm Express</li>
-								<li>Audacity</li>
-								<li>OBS</li>
-								<li>TubeBuddy, vidIQ, and Google Trends</li>
-							</ul>							
-						</div><!--//desc-->         
-					</div><!--//item-->	
-
-					<hr class="divider" />
-
-					<div class="item featured text-center">
-						<h3 class="title">Super Mario Maker 2</h3>
-						<p class="summary">A "Let's Play" featuring my wife and I.</p>
-						<div class="iframe-container">
-							<iframe src="https://www.youtube.com/embed/wYF60ezRcFw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>							
-						</div>
-						<div class="desc text-left">
-							<br/>
-							<p>This was a fun one! I was able to play games with my wife (who usually doesn't). I had a blast seeing her attempt to complete the level, as well as seeing the reactions in the comments.</p>
-							<p>Not only was it fun to make, but I enjoyed recording, editing, and publishing this video.</p>							
-						</div><!--//desc-->         
-					</div><!--//item-->
-				</div><!--//content-->  
-
-			    </div><!--//section-inner-->                 
-			</section><!--//section-->					    
-		</div>
+                </section><!--//section-->	    
 		    
  		<section class="projects section">
-                    <div class="section-inner">
+                    <div class="section-inner" id="gamedev">
                         <h2 class="heading">Game Development</h2>
                         <div class="content">
 							<div class="item featured text-center">
-								<h3 class="title">The Altered Hand: A Sci-Fi FPS - Made with Unity</h3>
-								<p class="summary">A prototype level made in under 30 days.</p>
+								<h3>A Dead Deal - Releasing Soon</h3>
+								<p class="summary">A simple, yet replayable mobile survival card game, made in Unity.</p>
+								<img class="profile-image img-fluid" src="assets/images/a_dead_deal_main_menu.png" alt="A Dead Deal Main Menu" />	
+								<div class="desc text-left">
+									<br/>
+									<p>As a big fan of survival games I wanted to encapsulate what the genre entails but in a small package. 
+									As a solo developer I attempted to capture the feeling of risk and reward, starvation, infection, and more.</p>
+									<p>I did all of the programming tasks including</p>
+									<ul>
+										<li>Gameplay loop</li>
+										<li>Menus</li>
+										<li>Google Ads and In-App Purchases</li>
+										<li>Achievements and Leaderboards</li>
+									</ul>
+									<p>This game was written in C# and created in the Unity game engine.</p>							
+								</div><!--//desc-->         
+								
+								<a class="btn btn-cta-secondary" href="https://kent.itch.io/dead-deal" target="_blank"></i><i class="fas fa-gamepad"></i> Play on itch.io</a> 
+								
+								<div style="display: none">			
+									<br/><br/>
+									<a class="btn btn-cta-secondary" href="https://play.google.com/store?hl=en_US&gl=US" target="_blank"></i><i class="fab fa-google-play"></i> Play on Android</a>                 
+									<br/><br/>
+									<a class="btn btn-cta-secondary" href="https://github.com/kentrosewi/hearthstone-card-search" target="_blank"><i class="fab fa-github-alt"></i> View on GitHub</a> 								
+								</div>
+							</div><!--//item-->	
+							
+							<hr class="divider" />
+							
+							<div class="item featured text-center">
+								<h3>The Altered Hand: A Sci-Fi FPS - Made with Unity</h3>
+								<p class="summary">A prototype game made in 30 days.</p>
 								<div class="iframe-container">
 									<iframe src="https://www.youtube.com/embed/sFnVqQPf1PU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>							
 								</div>
@@ -170,7 +169,7 @@
 							<div class="item row">
 								<iframe class="col-md-4 col-12" width="560" height="315" src="https://www.youtube-nocookie.com/embed/cq3C_WBQRCw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 								<div class="desc col-md-8 col-12">
-									<h3 class="title">Sk8 Street - Made with Unity</h3>
+									<h3>Sk8 Street - Made with Unity</h3>
 									<p class="mb-2">This game started off as a weekend project but I soon realized that by fleshing out a few of the mechanics I would be able to have a game that was fun to pick up and play every once in a while.</p>
 									<p class="mb-2">You have the ability to customize your board's deck, trucks, and wheels to create colorful combinations.</p>
 									<p class="mb-2">The levels are randomly generated so you won't be seeing the same layout twice which adds a bit of replay-ability.</p>
@@ -181,7 +180,7 @@
 							<hr class="divider" />
 				
 							<div class="item featured text-center">
-								<h3 class="title">Project Castaway</h3>
+								<h3>Project Castaway</h3>
 								<p class="summary">A text-based adventure game written in C++.</p>
 								<div class="iframe-container">
 									<iframe src="https://www.youtube.com/embed/pLekYGcOiNM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>							
@@ -196,124 +195,62 @@
 
                     </div><!--//section-inner-->                 
                 </section><!--//section-->	
-		
-		<div style="display: none">
-			<section class="projects section">
-			    <div class="section-inner">
-				<h2 class="heading">Games User Research, Writing, Clubs, Etc.</h2>
-				<div class="content">
-								<div class="item featured text-center">
-									<h3 class="title">Writing for various websites</h3><br/>
-
-									<p class="summary">Some Games Have Too Much Going On | Middle Earth: Shadow of War</p>
-					<a href="https://unleashthegamer.com/middle-earth-shadow-of-war/" target="_blank">
-										<img class="img-fluid project-image" src="https://i.imgur.com/6deTmEk.png" title="source: imgur.com" />	
-									</a>									
-									<br/>
-									<hr class="divider" />
-
-									<p class="summary">I kept dreaming of a world I thought I’d never see. And then one day, I got in.</p>
-					<a href="https://lootytooty.wordpress.com/2019/10/02/i-kept-dreaming-of-a-world-i-thought-id-never-see-and-then-one-day-i-got-in/" target="_blank">
-										<img class="img-fluid project-image" src="https://i.imgur.com/ouspaHY.png" title="source: imgur.com" />	
-									</a>									
-									<br/>
-									<hr class="divider" />
-
-									<p class="summary">Five reasons Xbox One might be better than PS4 in 2018</p>
-					<a href="http://www.thatvideogameblog.com/2018/10/06/5-reasons-xbox-one-might-be-better-than-ps4/" target="_blank">
-										<img class="img-fluid project-image" src="https://i.imgur.com/cymryEul.jpg" title="source: imgur.com" />	
-									</a>	
-								</div><!--//item-->	
-
-								<hr class="divider" />
-
-								<div class="item featured text-center">
-									<h3 class="title">Administering Playtest and Survey for Indie Game</h3>
-									<p class="summary">Focused on game UI</p>
-					<a href="https://docs.google.com/presentation/d/1wUCeEo7xjLl_HllSmUZfKqcBJChFojU5rDqZYREN_kc/edit?usp=sharing" target="_blank">
-										<img class="img-fluid project-image" src="https://i.imgur.com/PIKJu9Il.jpg" title="source: imgur.com" />	
-									</a>	
-									<div class="desc text-left">
-										<br/>
-										<p>My goal was to find an indie game far enough along in development that I could administer a playtest, but early enough that the developer could make changes based on survey results.</p>
-										<p>I went on the Unity3D <a href="https://www.reddit.com/r/Unity3D/" target="_blank">subreddit</a> and found a few games that met my criteria.</p>
-										<p>After talking with the developer of Magic and Monsters, he agreed that finding out what players of similar style games thought about his game would be a good idea.</p>
-										<p>In order to maintain focus for the playtest and survey I focused the questions on the game UI.</p>
-									    <a class="btn btn-cta-secondary" href="https://docs.google.com/presentation/d/1wUCeEo7xjLl_HllSmUZfKqcBJChFojU5rDqZYREN_kc/edit?usp=sharing" target="_blank">View my Report</a>                 
-									</div><!--//desc-->         
-								</div><!--//item-->													
-
-								<hr class="divider" />
-
-								<div class="item featured text-center">
-									<h3 class="title">Running a Video Game Club at Work</h3>
-									<p class="summary">Budgeted, brainstormed, and set up events based around video games.</p>
-									<img class="img-fluid project-image" src="https://i.imgur.com/sK8rCQXl.jpg" title="source: imgur.com" />
-									<div class="desc text-left">
-										<br/>
-										<p>I helped run the video game club at one of my prior places of employement. Two other leaders along with myself set up events like Rock Band in the auditorium with prizes, 24 hour Extra-Life events, and some tournaments. These tournaments included games like Super Smash Brothers, Halo, and other popular games. We needed to consider things such as budget, target audience, and time availability when settings up events.</p>
-									</div><!--//desc-->         
-								</div><!--//item-->	
-							</div><!--//content-->  
-
-			    </div><!--//section-inner-->                 
-		       </section><!--//section-->	
-		</div>
 		    
-		<section class="latest section">
-                    <div class="section-inner">
-                        <h2 class="heading">Application Development</h2>
-                        <div class="content">    
-                                             
-                            <div class="item featured text-center">
-                                <h3 class="title">Hearthstone Card Search App</h3>
-                                <p class="summary">A simple project in React/NodeJS that allows filtering Hearthstone cards.</p>
+	<section class="latest section">
+		<div class="section-inner" id="appdev">
+			<h2 class="heading">Application Development</h2>
+			<div class="content">    	 
+				<div class="item featured text-center">
+					<h3>Hearthstone Card Search App</h3>
+					<p class="summary">A simple project in React/NodeJS that allows filtering Hearthstone cards.</p>
 					<div class="iframe-container">
-								<iframe src="https://www.youtube.com/embed/N5YnhTogdzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                	</div>
+					<iframe src="https://www.youtube.com/embed/N5YnhTogdzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
 				<div class="desc text-left">
-									<br/>
-									<p>Technology used included the following:</p>
-									<ul>
-										<li>JavaScript with React for front-end</li>
-										<li>JavaScript with NodeJS and Express for back-end</li>
-										<li>Hearthstone JSON as the API to retrieve data</li>
-									</ul>
-									<p>This was my first time using React, Express, or NodeJS and was a really fun project.</p>
-								</div><!--//desc-->         
-                                    <a class="btn btn-cta-secondary" href="https://hearthstone-card-search.herokuapp.com/" target="_blank"></i>Live application</a>                 
-				    <br/><br/>
-				    <a class="btn btn-cta-secondary" href="https://github.com/kentrosewi/hearthstone-card-search" target="_blank"><i class="fab fa-github-alt"></i> View on GitHub</a>                 
-                            </div><!--//item-->					
-				
-			    <hr class="divider" />
-			
-                            <div class="item featured text-center">
-                                <h3 class="title">Feature Request Project</h3>
-                                <p class="summary">A sample project which allows for feature requests to be submitted by clients.</p>
-					<div class="iframe-container">
-								<iframe src="https://www.youtube.com/embed/DAoCuxhX9OE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                	</div>
+					<br/>
+					<p>Technology used included the following:</p>
+					<ul>
+						<li>JavaScript with React for front-end</li>
+						<li>JavaScript with NodeJS and Express for back-end</li>
+						<li>Hearthstone JSON as the API to retrieve data</li>
+					</ul>
+					<p>This was my first time using React, Express, or NodeJS and was a really fun project.</p>
+				</div><!--//desc-->
+				<div>
+					<a class="btn btn-cta-secondary" href="https://hearthstone-card-search.herokuapp.com/" target="_blank"></i>Live application</a>                 
+					<br/><br/>
+					<a class="btn btn-cta-secondary" href="https://github.com/kentrosewi/hearthstone-card-search" target="_blank"><i class="fab fa-github-alt"></i> View on GitHub</a>  				
+				</div>
+				</div><!--//item-->					
+
+			<hr class="divider" />
+
+			<div class="item featured text-center">
+				<h3>Feature Request Project</h3>
+				<p class="summary">A sample project which allows for feature requests to be submitted by clients.</p>
+				<div class="iframe-container">
+					<iframe src="https://www.youtube.com/embed/DAoCuxhX9OE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
 				<div class="desc text-left">
-									<br/>
-                                    <p>This application was done outside of work and allows users to submit feature requests for different clients as well as different product areas. It could easily be extended to allow deletion of feature requests, addition of new clients, product areas, and more.</p>
-									<p>Technology used included the following:</p>
-									<ul>
-										<li>JavaScript with Knockout.js, jQuery</li>
-										<li>Bootstrap CSS</li>
-										<li>Python 2.7 and Flask for back-end API</li>
-										<li>SQLAlchemy and MySQL relational database management system</li>
-										<li>Developed in Docker with an Ubuntu instance</li>
-										<li>Amazon Web Services for hosting</li>
-									</ul>
-									<p>This was a great learning opportunity as I had never worked with most of these frameworks/technologies before. My main goal of the project was to learn about new ways of creating applications, and at the same time create clean and reusable code/components. </p>
-									<p>Click the button below to see the code.</p>
-								</div><!--//desc-->         
-                                <a class="btn btn-cta-secondary" href="https://github.com/kentrosewi/EngineeringMidLevelProject" target="_blank"><i class="fab fa-github-alt"></i> View on GitHub</a>                 
-                            </div><!--//item-->							
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->		    
+					<br/>
+					<p>This application was done outside of work and allows users to submit feature requests for different clients as well as different product areas. It could easily be extended to allow deletion of feature requests, addition of new clients, product areas, and more.</p>
+					<p>Technology used included the following:</p>
+					<ul>
+					<li>JavaScript with Knockout.js, jQuery</li>
+					<li>Bootstrap CSS</li>
+					<li>Python 2.7 and Flask for back-end API</li>
+					<li>SQLAlchemy and MySQL relational database management system</li>
+					<li>Developed in Docker with an Ubuntu instance</li>
+					<li>Amazon Web Services for hosting</li>
+					</ul>
+					<p>This was a great learning opportunity as I had never worked with most of these frameworks/technologies before. My main goal of the project was to learn about new ways of creating applications, and at the same time create clean and reusable code/components. </p>
+					<p>Click the button below to see the code.</p>
+				</div><!--//desc-->         
+				<a class="btn btn-cta-secondary" href="https://github.com/kentrosewi/EngineeringMidLevelProject" target="_blank"><i class="fab fa-github-alt"></i> View on GitHub</a>                 
+				</div><!--//item-->							
+			</div><!--//content-->  
+		</div><!--//section-inner-->                 
+	</section><!--//section-->		    
 		    
 		<section class="projects section">
                     <div class="section-inner">
@@ -373,7 +310,7 @@
                 </section><!--//section-->
 				
                 <section class="experience section">
-                    <div class="section-inner">
+                    <div class="section-inner" id="workxp">
                         <h2 class="heading">Work Experience</h2>
                         <div class="content">
 						    <div class="item">
@@ -402,33 +339,20 @@
                     </div><!--//section-inner-->                 
                 </section><!--//section-->               
             </div><!--//primary-->
-            <div class="secondary col-lg-4 col-12">
-                 <aside class="info aside section">
-                    <div class="section-inner">
-                        <h2 class="heading sr-only">Basic Information</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>Sheboygan, WI, US</li>
-                            </ul>
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </aside><!--//aside-->
-                
+            <div class="secondary col-lg-4 col-12">            
                 <aside class="skills aside section">
                     <div class="section-inner">
                         <h2 class="heading">Skills</h2>
                         <div class="content">
-                            <div class="skillset">				    
+                            <div class="skillset">		
+				<div class="item">
+                                    <h3 class="level-title">Unity Game Development, C#</h3>
+                                </div><!--//item-->									
                                 <div class="item">
                                     <h3 class="level-title">Javascript, Java, Python HTML, CSS, Dojo, KnockoutJS, Bootstrap</h3>
-                                </div><!--//item-->	
-
+                                </div><!--//item-->									
 				<div class="item">
-                                    <h3 class="level-title">Unity Game Development</h3>
-                                </div><!--//item-->					    
-				    
-				<div class="item">
-                                    <h3 class="level-title">Video Editing, Search Engine Optimization, YouTube Account Management, Social Media</h3>
+                                    <h3 class="level-title">Photoshop, Illustrator, Video Editing, Search Engine Optimization, YouTube Account Management, Social Media</h3>
                                 </div><!--//item-->	
 				    
 				<div class="item">
@@ -441,23 +365,6 @@
                             </div>              
                         </div><!--//content-->  
                     </div><!--//section-inner-->                 
-                </aside><!--//section-->
-                
-                <aside class="testimonials aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Testimonials</h2>
-                        <div class="content">
-                            <div class="item">
-                                <blockquote class="quote">                                  
-                                    <p><i class="fas fa-quote-left"></i>Kent is very disciplined and professional. He is very task oriented and can handle multiple tasks at once. He was the team leader in multiple projects. There are many programming skills that Kent has including: Java, SQL, C++, Object-oriented programming, and others. He can easily pick up on other languages/skills without trouble. He is very dedicated and self-motivated.</p>
-                                </blockquote>                
-                                <p class="source"><span class="name">Daniel Meighen</span><br /><span class="title">Former classmate</span></p>                                                             
-                            </div><!--//item-->
-                            
-                            <p><a class="more-link" style="display: none" href="#"><i class="fas fa-external-link-alt"></i>More on Linkedin</a></p> 
-                            
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
                 </aside><!--//section-->
                 
                 <aside class="education aside section">
@@ -476,32 +383,6 @@
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//section-->
-
-                <aside class="list music aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Favorite coding music</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-								<li><i class="fas fa-headphones"></i> <a href="https://www.youtube.com/insaneintherainmusic" target="_blank">insaneintherainmusic - Jazz Video Game Covers</a></li>
-                                <li><i class="fas fa-headphones"></i> <a href="https://www.youtube.com/watch?v=Jm932Sqwf5E" target="_blank">Doom - Original Soundtrack</a></li>
-                                <li><i class="fas fa-headphones"></i> <a href="https://www.youtube.com/watch?v=kfy9IKQ7oBI&start_radio=1&list=RDQM_ypTjtRLOJA" target="_blank">Relaxing Video Game Music</a></li>
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-                
-                <aside class="list conferences aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Conferences</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="far fa-calendar-alt"></i> <a href="https://nofluffjuststuff.com/conference/madison/2018/03/home" target="_blank">No Fluff Just Stuff 2018</a> (Madison, WI)</li>
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-               
-              
             </div><!--//secondary-->    
         </div><!--//row-->
     </div><!--//masonry-->
