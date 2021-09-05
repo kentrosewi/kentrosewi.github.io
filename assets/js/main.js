@@ -17,11 +17,16 @@ var showHide = function(idToShow) {
 		divToShow.style.display = "block";		
 
 		displayedObj.id = idToShow;
-		
-		console.log("hiding: " + displayedObj.id);
-		console.log("showing: " + idToShow);
 	} 
 }	
+
+$(document).ready(function () { 
+  $(document).click(function () {
+     // if($(".navbar-collapse").hasClass("in")){
+       $('.navbar-collapse').collapse('hide');
+     // }
+  });
+});
 
 /* Vanilla RSS - https://github.com/sdepold/vanilla-rss */
 
