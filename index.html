@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">  
     <link rel="stylesheet" href="assets/plugins/github-activity/src/github-activity.css">
 
+	<!-- highlight css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
     
@@ -309,14 +312,586 @@
 										<p>I performed the following tasks on the project:</p>
 										<ul>
 											<li>Programming</li>
-											<li>Game design</li>
-											<li>Level design</li>
-											<li>UI design</li>
-											<li>Audio decisions</li> 
+											<ul>
+												<li>Weapon Controllers (code displayed below)</li>
+													<ul>
+														<li>Revolver</li>
+														<li>Shotgun</li>
+														<li>Assault Rifle</li>
+													</ul>
+												<li>Player Abilities</li>
+													<ul>
+														<li>Levitate enemy</li>
+														<li>Teleport player character forward</li>
+														<li>Increase weapon damage</li>
+													</ul>
+												<li>Sprite Object Pool (code displayed below)</li>
+												<li>Ammo and Health Pickups</li>
+												<li>User Interface</li>
+													<ul>
+														<li>Health, Ability Energy, and Sprint meters</li>
+														<li>Active weapon display with ammo count</li>
+														<li>Active ability</li>
+														<li>Flashlight meter</li> 
+													</ul>
+												<li>Basic Enemy AI</li>
+											</ul>
 											<li>Animations</li>
-										</ul>
-										<p>Just about the only thing I did not do was the 3D modelling. I would have loved to work on this with other game developers but unfortunately the narrow time constraints prevented this from being a feasible idea.</p>
-										<p>This game was written in C# and created in the Unity game engine.</p>	
+											<ul>
+												<li>Weapon Animations</li>
+											</ul>
+										</ul>	
+										<p>This game was written in C# and created in the Unity game engine.</p>										
+									</div>
+									
+									<div class="desc text-start"> 	
+										<h6 class="mb-3">Gif Showcase</h6>
+										<div class="accordion" id="gifAccordion">									
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="headingOne">
+													<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneGifAccordion" aria-expanded="false" aria-controls="collapseOne">
+													Object Pool Demonstation (Maximum of 5 bullet hole sprites)
+													</button>
+												</h2>
+												<div id="collapseOneGifAccordion" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+													<div class="accordion-body">
+														<img class="img-fluid project-image rounded shadow-sm mx-auto d-block" src="assets/images/gifs/object_pool.gif" alt="project name" />
+													</div>
+												</div>
+											</div>
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="headingOne">
+													<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoGifAccordion" aria-expanded="false" aria-controls="collapseOne">
+													UI Ammo Counter
+													</button>
+												</h2>
+												<div id="collapseTwoGifAccordion" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+													<div class="accordion-body">
+														<img class="img-fluid project-image rounded shadow-sm mx-auto d-block" src="assets/images/gifs/ammo_counter.gif" alt="project name" />
+													</div>
+												</div>
+											</div>												
+										</div>										
+									</div>
+									
+									<div class="desc text-start">        
+										<h6 class="mb-3">Code Showcase</h6>
+
+										<div class="accordion" id="codeAccordion">
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="headingOne">
+													<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneCodeAccordion" aria-expanded="false" aria-controls="collapseOne">
+													Object Pool for Sprites (used for bullet holes)
+													</button>
+												</h2>
+												<div id="collapseOneCodeAccordion" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#codeAccordion">
+													<div class="accordion-body">
+														<p>This class allows for sprites to be put into an object pool and retrieved when needed.</p>
+														<pre>
+															<code>
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/**
+ * Author: Kent Rose
+ * Summary: An object pool for sprites. Prevents the constant creation and destruction of sprites (such as bullet holes) by creating a given number of game objects at start of game.
+ * Date: 05/27/2018
+ **/
+public class SpritePool : MonoBehaviour
+{
+
+    [SerializeField] // allow to be viewed in inspector even though private
+    private GameObject prefabGameObject; // prefab to base instantiated objects off of
+
+    [SerializeField] // allow to be viewed in inspector even though private
+    [Range(1, 250)] // valid range of pool size
+    private int poolSize;
+
+    private GameObject[] gameObjectArray;
+    private int indexToUse; // the next valid index to use in array
+    private bool initialized; // if the pool is set up and ready
+
+    private void Start()
+    {
+        if (!this.initialized)
+        {
+            this.Initialize();
+        }
+    }
+
+    private void Awake()
+    {
+        if (!this.initialized)
+        {
+            this.Initialize();
+        }
+    }
+
+    /**
+     * Initialize the object pool.
+     **/
+    private void Initialize()
+    {
+        if (this.prefabGameObject == null)
+        {
+            Debug.LogError("prefabGameObject is null. Please set in the inspector.");
+            return;
+        }
+
+        this.indexToUse = 0;
+        this.gameObjectArray = new GameObject[this.poolSize];
+        this.FillPool();
+        this.initialized = true;
+    }
+
+    /**
+     * Fill the object bool up to the given size.
+     * Attach created game objects to the pool holder
+     **/
+    private void FillPool()
+    {
+        for (int i = 0; i < this.poolSize; ++i)
+        {
+            this.gameObjectArray[i] = Instantiate(this.prefabGameObject, Vector3.zero, Quaternion.identity);
+            this.gameObjectArray[i].SetActive(false);
+            this.gameObjectArray[i].transform.parent = this.transform;
+        }
+    }
+
+    /**
+     * Return the next to use sprite game object in pool.
+     * @return the next to use sprite game object
+     **/
+    public GameObject GetSprite()
+    {
+        if (!this.IsPoolReady())
+        {
+            return null;
+        }
+
+        int i = indexToUse;
+        indexToUse = (indexToUse + 1) % this.gameObjectArray.Length;
+        return this.gameObjectArray[i];
+    }
+
+    /**
+     * Return the next to use sprite game object in pool.
+     * @param set the active bool on game object before returning
+     * @return the next to use sprite game object
+     **/
+    public GameObject GetSprite(bool active)
+    {
+        if (!this.IsPoolReady())
+        {
+            return null;
+        }
+
+        GameObject gameObjectTouse = this.GetSprite();
+        gameObjectTouse.SetActive(active);
+        return gameObjectTouse;
+    }
+
+    /**
+     * Return the next to use sprite game object in pool.
+     * @param set the active bool on game object before returning
+     * @param set the game object's position before returning
+     * @param set the game object's rotation before returning
+     * @return the next to use sprite game object
+     **/
+    public GameObject GetSprite(bool active, Vector3 position, Quaternion rotation)
+    {
+        if (!this.IsPoolReady())
+        {
+            return null;
+        }
+
+        GameObject gameObjectToUse = this.GetSprite(active);
+        gameObjectToUse.transform.SetPositionAndRotation(position, rotation);
+        return gameObjectToUse;
+    }
+
+    /**
+     * Checks if the pool has been initialized.
+     **/
+    public bool IsPoolReady()
+    {
+        if (!this.initialized)
+        {
+            Debug.LogError("Pool is not ready.");
+        }
+        return this.initialized;
+    }
+}															
+															</code>
+														</pre>
+													</div>
+												</div>
+											</div>
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="headingTwo">
+												  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoCodeAccordion" aria-expanded="false" aria-controls="collapseTwo">
+													Fireable Weapon (Used for all guns)
+												  </button>
+												</h2>
+												<div id="collapseTwoCodeAccordion" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#codeAccordion">
+												  <div class="accordion-body">
+													<p>This class is attached to every fireable weapon in the game and allows for modifiable attributes such as</p>
+													<ul>
+														<li>Time to ADS (aim down sight)</li>
+														<li>Weapon accuracy via hip-fire vs ADS</li>
+														<li>Single fire vs Automatic</li>
+														<li>Time between firing</li>
+													</ul>
+													<pre>
+														<code>
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FireableWeapon : AbstractWeapon
+{
+    [SerializeField] protected Transform originalPosition;
+    [SerializeField] protected Transform adsPosition;
+    private Transform currentBeginPosition;
+
+    [SerializeField] protected Transform bulletSpawn;
+    protected Transform weaponTransform;
+
+    [SerializeField] protected float adsSpeed;
+    [SerializeField] protected float force;
+    [SerializeField] protected float inaccuracyAmount;
+    [SerializeField] protected float inaccuracyAmountAiming;
+
+    [SerializeField] protected AudioSource reloadAudioSource;
+    [SerializeField] protected AudioSource dryFireAudioSource;
+    [SerializeField] protected AudioSource flipSwitchAudioSource;
+
+    [SerializeField] protected GameObject reticuleGO;
+    [SerializeField] protected Sprite reticuleSprite;
+
+    protected bool ads;
+
+    [SerializeField] protected int magazineSize;
+    [SerializeField] protected int bulletsLeftInMagazine;
+
+    [SerializeField] protected Enums.BulletType bulletType;
+
+    [SerializeField] protected List<Enums.FireMode> fireModes;
+    [SerializeField] protected Enums.FireMode activeFireMode;
+
+    [SerializeField] protected bool useInaccuracy;
+    [SerializeField] protected int numberOfProjecticles = 1;
+
+    [SerializeField] protected float meleeDistance;
+    [SerializeField] protected float meleeRadius;
+
+    [SerializeField] private SpritePool bulletHolePool;
+
+    protected bool triggerIsDepressed;
+
+    public GameObject muzzleFlash;
+    public Transform muzzleFlashLocation;
+
+    public void Start()
+    {
+        this.Initialize();
+    }
+
+    public void Awake()
+    {
+        this.Initialize();
+    }
+
+    public new void Update()
+    {
+        base.Update();
+        this.HandlePos();
+    }
+
+    public new void Initialize()
+    {
+        base.Initialize();
+        this.lastAttack = this.timeBetweenAttacks;
+
+        this.SetReticule();
+        this.GetWeaponPositions();
+
+        if (this.fireModes == null || this.fireModes.Count == 0)
+        {
+            Debug.Log("fireModes is null or empty.");
+        }
+
+        if (this.activeFireMode != Enums.FireMode.Single && this.fireModes.Count == 1)
+        {
+            this.activeFireMode = this.fireModes[0];
+        }
+    }
+
+    public override void Attack()
+    {
+        if (this.EnoughTimePassedSinceLastShot())
+        {
+            if (this.activeFireMode == Enums.FireMode.Single)
+            {
+                if (!this.triggerIsDepressed)
+                {
+                    this.HandleSingleFire();
+                }
+            }
+            else if (this.activeFireMode == Enums.FireMode.Auto)
+            {
+                this.HandleSingleFire();
+            }
+        }
+    }
+
+    protected virtual void HandleSingleFire()
+    {
+        if (this.bulletsLeftInMagazine > 0)
+        {
+            this.FireHelper();
+        }
+        else if (!this.triggerIsDepressed)
+        {
+            this.dryFireAudioSource.Play();
+        }
+    }
+
+    private void FireHelper()
+    {
+        this.FireHelper2();
+
+
+        for(int i = 0; i < this.numberOfProjecticles; i++)
+        {
+            Vector3 forward = this.GetForwardVector(ads, this.useInaccuracy);
+
+            RaycastHit hit;
+            if (Physics.Raycast(this.bulletSpawn.position, forward, out hit))
+            {
+                //this.ApplyBulletHole(hit);
+                this.AddForceToRigidbody(hit);
+                this.CheckIfHittable(hit);
+            }
+        }
+    }
+
+    /**
+     * Get a bullet hole sprite from the object pool and place at location of hit, and rotation of the hit's normal.
+     * Attach to hit transform.
+     **/ 
+    private void ApplyBulletHole(RaycastHit hit)
+    {
+        if(this.bulletHolePool != null)
+        {
+            GameObject tempBulletHole = this.bulletHolePool.GetSprite(true, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+            tempBulletHole.transform.parent = hit.transform;
+        }
+    }
+
+    private void FireHelper2()
+    {
+        this.animator.SetTrigger("Attack");
+
+        this.attackAudioSource.Play();
+        this.bulletsLeftInMagazine--;
+        this.lastAttack = 0f;
+
+        Destroy(Instantiate(this.muzzleFlash, this.muzzleFlashLocation.position, this.muzzleFlash.transform.rotation), 0.25f);
+    }
+
+    protected Vector3 GetForwardVector(bool ads, bool useInaccuracy)
+    {
+        Vector3 forward = transform.forward;
+
+        if(!useInaccuracy)
+        {
+            return forward;
+        }
+
+        if (this.ads)
+        {
+            forward.x += Random.Range(-inaccuracyAmountAiming, inaccuracyAmountAiming);
+            forward.y += Random.Range(-inaccuracyAmountAiming, inaccuracyAmountAiming);
+            forward.z += Random.Range(-inaccuracyAmountAiming, inaccuracyAmountAiming);
+        }
+        else
+        {
+            forward.x += Random.Range(-inaccuracyAmount, inaccuracyAmount);
+            forward.y += Random.Range(-inaccuracyAmount, inaccuracyAmount);
+            forward.z += Random.Range(-inaccuracyAmount, inaccuracyAmount);
+        }
+
+        return forward;
+    }
+
+    protected void AddForceToRigidbody(RaycastHit hit)
+    {
+        Rigidbody rbTemp = hit.rigidbody;
+        if (rbTemp != null)
+        {
+            rbTemp.AddForce(-hit.normal * this.force);
+        }
+    }
+
+    public override void AltAttack()
+    {
+        this.animator.SetTrigger("AltAttack");
+
+        Vector3 finalPoint = this.bulletSpawn.position + (this.bulletSpawn.forward * this.meleeDistance);
+
+        bool playAudio = false;
+
+        Collider[] toHit = Physics.OverlapSphere(finalPoint, this.meleeRadius);
+        foreach (Collider obj in toHit)
+        {
+            Vector3 direction = obj.transform.position - this.bulletSpawn.position;
+            RaycastHit hit;
+            if (Physics.Raycast(this.bulletSpawn.position, direction, out hit))
+            {
+                playAudio = true;
+                this.AddForceToRigidbody(hit);
+                this.CheckIfHittable(hit);
+            }
+        }
+
+        if(playAudio)
+        {
+            this.altAttackAudioSource.Play();
+        }
+    }
+
+    void SetReticule()
+    {
+        this.reticuleGO = GameObject.Find("Reticule");
+        if (this.reticuleGO == null)
+        {
+            Debug.LogError("reticuleGO is null.");
+        }
+    }
+
+    void GetWeaponPositions()
+    {
+        this.weaponTransform = this.gameObject.transform.Find("Weapon");
+        if (this.weaponTransform == null)
+        {
+            Debug.Log("weaponTransform is null.");
+        }
+
+        this.originalPosition = this.gameObject.transform.Find("OriginalPosition");
+        if (this.originalPosition == null)
+        {
+            Debug.Log("originalPosition is null.");
+        }
+
+        this.adsPosition = this.gameObject.transform.Find("ADSPosition");
+        if (this.adsPosition == null)
+        {
+            Debug.Log("adsPosition is null.");
+        }
+
+        this.bulletSpawn = this.gameObject.transform.parent.Find("BulletSpawn");
+        if (this.bulletSpawn == null)
+        {
+            Debug.Log("bulletSpawn is null.");
+        }
+
+        this.currentBeginPosition = this.originalPosition;
+    }
+
+    public void Reload()
+    {
+        this.reloadAudioSource.Play();
+
+        if (this.animator != null)
+        {
+            this.animator.SetTrigger("Reload");
+        }
+    }
+
+    public void SetADS(bool ads)
+    {
+        this.ads = ads;
+        //this.animator.SetBool("ADS", this.ads);
+        if (this.ads)
+        {
+            this.currentBeginPosition = this.adsPosition;
+            this.reticuleGO.SetActive(false);
+        }
+        else
+        {
+            this.currentBeginPosition = this.originalPosition;
+            this.reticuleGO.SetActive(true);
+        }
+    }
+
+    public void SetTriggerIsDepressed(bool triggerIsDepressed)
+    {
+        this.triggerIsDepressed = triggerIsDepressed;
+    }
+
+    public void IncrementFireMode()
+    {
+        if (this.fireModes.Count > 1)
+        {
+            int index = this.fireModes.IndexOf(this.activeFireMode);
+            this.activeFireMode = this.fireModes[++index % this.fireModes.Count];
+
+            this.animator.SetTrigger("FlipSwitch");
+            this.flipSwitchAudioSource.Play();
+        }
+    }
+
+    public bool EnoughTimePassedSinceLastShot()
+    {
+        return this.lastAttack >= this.timeBetweenAttacks;
+    }
+
+    protected void CheckIfHittable(RaycastHit hit)
+    {
+        Hittable hittable = Utility<Hittable>.CheckForInSelfAndParents(hit.collider.gameObject);
+        if (hittable != null)
+        {
+            hittable.GetHit(hit, this.damage);
+        }
+    }
+
+    void HandlePos()
+    {
+        Vector3 newPos;
+        float step = this.adsSpeed * Time.deltaTime;
+        newPos = this.currentBeginPosition.localPosition;
+        weaponTransform.localPosition = Vector3.MoveTowards(weaponTransform.localPosition, newPos, step);
+    }
+
+    public int GetMagazineSize()
+    {
+        return this.magazineSize;
+    }
+
+    public int GetBulletsLeftInMagazine()
+    {
+        return this.bulletsLeftInMagazine;
+    }
+
+    public void SetBulletsLeftInMagazine(int bulletsLeftInMagazine)
+    {
+        this.bulletsLeftInMagazine = bulletsLeftInMagazine;
+        this.Reload();
+    }
+
+    public Enums.BulletType GetBulletType()
+    {
+        return this.bulletType;
+    }
+}														
+														</code>
+													</pre>
+												  </div>
+												</div>
+											</div>
+										</div>	
 									</div><!--//desc-->    
 
 									<div class="">
@@ -531,6 +1106,8 @@
     <!-- github activity plugin -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
     <script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script>
+	<!-- highlight js -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>     
 </body>
