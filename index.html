@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Kent Rose - Game Programmer</title>
+    <title>Kent Rose - Game Developer</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
     
-    <!-- FontAwesome JS -->
+    <!-- FontAwesome JS -->`
     <script defer src="assets/fontawesome/js/all.js"></script>
     
     <!-- Global CSS -->
@@ -33,16 +33,16 @@
     
 </head> 
 
-<body>
+<body style="background: #4b5045">
     <!-- ******HEADER****** --> 
-    <header id="page-top" class="header">
+    <header id="page-top" class="header" style="border-top: 10px solid #1e201c">
         <div class="container">     
 	        <div class="row align-items-center">
 			    <div class="col">         
 		            <img class="profile-image img-fluid float-start rounded-circle" src="assets/images/profile.png" alt="profile image" />
 		            <div class="profile-content">
 		                <h1 class="name">Kent Rose</h1>
-		                <h2 class="desc">Game Programmer</h2>   
+		                <h2 class="desc">UI Engineer at Infinity Ward</h2>   
 		                <ul class="social list-inline">
 		                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/kentrose/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
 		                    <li class="list-inline-item"><a href="https://github.com/kentrosewi" target="_blank"><i class="fab fa-github-alt"></i></a></li>    
@@ -63,7 +63,7 @@
     </header><!--//header-->
 	
 	<!-- ******NAVBAR****** -->
-	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #1e201c">
 		<div class="container">
 			<span class="navbar-brand">Kent Rose</span>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,9 +72,10 @@
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
 					<a class="nav-link" aria-current="page" href="#page-top" onclick="showHide('home-page')">Home</a>
-					<a class="nav-link" href="#gamedev" onclick="showHide('home-page')">Game Dev</a>
+					<a class="nav-link" href="#profgamedev" onclick="showHide('home-page')">Professional Game Dev</a>
+					<a class="nav-link" href="#persgamedev" onclick="showHide('home-page')">Personal Game Dev</a>
 					<a class="nav-link" href="#appdev" onclick="showHide('home-page')">App Dev</a>
-					<a class="nav-link" href="#workxp" onclick="showHide('home-page')">Work XP</a>
+					<a class="nav-link" href="#workxp" onclick="showHide('home-page')">Work History</a>
 				</div>
 			</div>
 		</div>
@@ -83,25 +84,42 @@
 	
     <div class="container sections-wrapper py-5">
         <div class="row">
-            <div class="primary col-lg-8 col-12">
+            <div class="primary col-lg-10 col-12 offset-lg-1">
 				<div id="home-page">
 					<section class="about section">
 						<div class="section-inner shadow-sm rounded">
 							<h2 class="heading">Hey there!</h2>
 							<div class="content">
-								<p>I'm Kent, a team-oriented programmer with over 5 years of experience as a professional software developer in the insurance industry. I've been able to prove my ability to write clean and reusable code as well as navigate the intricacies of version control, estimating project timelines, mentorship, collaborating 
+								<p>I'm Kent, a team-oriented programmer with over 5 years of experience as a professional software developer, first starting in the insurance industry and now currently as an Engineer at Infinity Ward working on <strong>Call of Duty: Modern Warfare 2</strong>. I've been able to prove my ability to write clean and reusable code as well as navigate the intricacies of version control, estimating project timelines, mentorship, collaborating 
 								in group environments and much, much more.</p>
-								<p>Through my personal game development projects I've been able to hone my skills with Unity and have a goal of landing an entry to intermediate game developer position. In early 2020 I decided to become a stay-at-home dad in order to raise my young daughter but will soon be re-entering the workforce as a game programmer.</p>
-
-								<p>If this sounds good to you, awesome! Check out my projects below.</p>
 							</div><!--//content-->
 						</div><!--//section-inner-->                 
 					</section><!--//section-->
 		
-					<section id="gamedev" class="latest section">
+					<section id="profgamedev" class="latest section">
 						<div class="section-inner shadow-sm rounded">
-							<h2 class="heading">Game Development</h2>
-							<div class="content">    
+							<h1 class="heading">Professional Game Development</h2>
+							<div class="content mx-5 mb-5">    
+												   											   
+								<!-- Call of Duty: Modern Warfare 2 (2022) -->		
+								<section>
+									<div class="item featured text-center" >
+										
+										<div class="featured-image">
+											<a onclick="showHide('codmw2-details')" href="#codmw2-details">
+												<img class="img-fluid project-image rounded shadow-sm" src="assets/images/professional_game_dev/mw2_cover_art_w_info.png" alt="project name" />									
+											</a>
+										</div>
+									</div><!--//item-->				
+								</section>							
+							</div><!--//content-->  
+						</div><!--//section-inner-->                
+					</section><!--//section-->		
+		
+					<section id="persgamedev" class="latest section">
+						<div class="section-inner shadow-sm rounded">
+							<h1 class="heading">Personal Game Development</h2>
+							<div class="content mx-5 mb-5">    
 												   
 												   
 								<!-- A Dead Deal preview -->		
@@ -142,100 +160,67 @@
 									
 									<hr class="divider" />							
 								</section>
-
-								<!-- Forge Dwarf -->		
+	
+								
 								<section>
-									<div class="item featured text-center" >
-										
-										<div class="featured-image has-ribbon">
-											<a onclick="#" href="https://kent.itch.io/forge-dwarf" target="_blank">
-												<img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/forge_dwarf_abilities.png" alt="project name" />
-											</a>										
-											<div class="ribbon">
-												<div class="text">New</div>
-											</div>
-										</div>
-										
-										<h3 class="title mb-3"><a onclick="#" href="https://kent.itch.io/forge-dwarf" target="_blank">Forge Dwarf (On Hold)</a></h3>
-										<h6 class="mb-3">A simple Idle-RPG style game, made in Unity.</h6>
-			
-										<div class="desc text-start">                                    
-											<p>I wanted to create a small but fun game that would work well on desktop as well as mobile.</p>
-											<p>The game will have the following features</p>
-											<ul>
-												<li>Character stats and skill points for upgrading</li>
-												<li>Weapons, tools, and equippable runes</li>
-												<li>Forge to craft items</li>
-												<li>Player abilities</li>
-												<li>Multiple regions, enemies, and resource types
-											</ul>
-										</div><!--//desc-->    
-
-										<div class="">
+									<!-- Forge Dwarf -->
+									<div class="item row">
+										<a class="col-md-4 col-12" onclick="showHide('forge-dwarf-details')" href="#">
+											<img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/forge_dwarf_abilities.png" alt="project name" />
+										</a>
+										<div class="desc col-md-8 col-12">
+											<h3 class="title"><a onclick="showHide('forge-dwarf-details')" href="#">Forge Dwarf - A simple Idle-RPG style game, made in Unity.</a></h3>
+											<!--<p class="mb-2"></p>-->		
+											
 											<img class="" style="max-width: 200px" src="assets/images/unity-mwu-black.png" alt="project name" />
-										</div>
-										
-										<a class="btn btn-cta-secondary" href="https://kent.itch.io/forge-dwarf" target="_blank"><i class="fas fa-gamepad"></i> Play on itch.io</a>
-										
+											<p><a class="more-link" onclick="showHide('forge-dwarf-details')" href="#"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+										</div><!--//desc-->                          
 									</div><!--//item-->
-									
-									<hr class="divider" />	
+									<hr class="divider" />
 									
 									<!-- Yokai Match -->
-									<div class="item featured text-center" >
-										
-										<div class="featured-image has-ribbon">
-											<a onclick="#" href="https://kent.itch.io/yokai-match" target="_blank">
-												<img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/yokai_match_combat.png" alt="project name" />
-											</a>										
-											<div class="ribbon">
-												<div class="text">New</div>
-											</div>
-										</div>
-										
-										<h3 class="title mb-3"><a onclick="#" href="https://kent.itch.io/yokai-match" target="_blank">Yokai Match!</a></h3>
-										<h6 class="mb-3">A Match-3 game for Dungeon Crawler Jam 2022! (Made in Unity)</h6>
-			
-										<div class="desc text-start">                                    
-											<p>Working with another programmer and artist on this project, I focused on implementing the Match-3 combat section.</p>
-											<p>In addition to programming I was able to practice game design as well as integrating the artist's work into the project, along with animating.</p>
-										</div><!--//desc-->    
-
-										<div class="">
+									<div class="item row">
+										<a class="col-md-4 col-12" onclick="showHide('yokai-match-details')" href="#">
+											<img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/yokai_match_combat.png" alt="project name" />
+										</a>
+										<div class="desc col-md-8 col-12">
+											<h3 class="title"><a onclick="showHide('yokai-match-details')" href="#">Yokai Match! - A Match-3 game for Dungeon Crawler Jam 2022!</a></h3>
+											<!--<p class="mb-2"></p>-->		
+											
 											<img class="" style="max-width: 200px" src="assets/images/unity-mwu-black.png" alt="project name" />
-										</div>
-										
-										<a class="btn btn-cta-secondary" href="https://kent.itch.io/yokai-match" target="_blank"><i class="fas fa-gamepad"></i> Play on itch.io</a>
-										
-									</div><!--//item-->									
+											<p><a class="more-link" onclick="showHide('yokai-match-details')" href="#"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+										</div><!--//desc-->                          
+									</div><!--//item-->		
+									<hr class="divider" />
 									
-									<hr class="divider" />							
-								</section>
-							
-								<div class="item row">
-									<a class="col-md-4 col-12" onclick="showHide('the-altered-hand-details')" href="#">
-										<img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/the_altered_hand_game_screenshot.png" alt="project name" />
-									</a>
-									<div class="desc col-md-8 col-12">
-										<h3 class="title"><a onclick="showHide('the-altered-hand-details')" href="#">The Altered Hand - A Prototype FPS Made in 30 Days</a></h3>
-										<!--<p class="mb-2"></p>-->		
-										
-										<img class="" style="max-width: 200px" src="assets/images/unity-mwu-black.png" alt="project name" />
-										<p><a class="more-link" onclick="showHide('the-altered-hand-details')" href="#"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
-									</div><!--//desc-->                          
-								</div><!--//item-->
-								
-								<div class="item row">
-									<a class="col-md-4 col-12" onclick="showHide('project-castaway-details')" href="#">
-										<img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project_castaway_screenshot.png" alt="project name" />
-									</a>
-									<div class="desc col-md-8 col-12">
-										<h3 class="title"><a onclick="showHide('project-castaway-details')" href="#">Project Castaway - Text Based Adventure in C++</a></h3>
-										<!--<p class="mb-2"></p>-->
-										<p><a class="more-link" onclick="showHide('project-castaway-details')" href="#"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
-									</div><!--//desc-->                          
-								</div><!--//item-->
-								
+									<!-- The Altered Hand -->
+									<div class="item row">
+										<a class="col-md-4 col-12" onclick="showHide('the-altered-hand-details')" href="#">
+											<img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/the_altered_hand_game_screenshot.png" alt="project name" />
+										</a>
+										<div class="desc col-md-8 col-12">
+											<h3 class="title"><a onclick="showHide('the-altered-hand-details')" href="#">The Altered Hand - A Prototype FPS Made in 30 Days</a></h3>
+											<!--<p class="mb-2"></p>-->		
+											
+											<img class="" style="max-width: 200px" src="assets/images/unity-mwu-black.png" alt="project name" />
+											<p><a class="more-link" onclick="showHide('the-altered-hand-details')" href="#"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+										</div><!--//desc-->                          
+									</div><!--//item-->
+									<hr class="divider" />
+									
+									<!-- Project Castaway -->
+									<div class="item row">
+										<a class="col-md-4 col-12" onclick="showHide('project-castaway-details')" href="#">
+											<img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project_castaway_screenshot.png" alt="project name" />
+										</a>
+										<div class="desc col-md-8 col-12">
+											<h3 class="title"><a onclick="showHide('project-castaway-details')" href="#">Project Castaway - Text Based Adventure in C++</a></h3>
+											<!--<p class="mb-2"></p>-->
+											<p><a class="more-link" onclick="showHide('project-castaway-details')" href="#"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+										</div><!--//desc-->                          
+									</div><!--//item-->
+																												
+								</section>	
 							</div><!--//content-->  
 						</div><!--//section-inner-->                
 					</section><!--//section-->
@@ -243,7 +228,7 @@
 					<section id="appdev" class="projects section">
 						<div class="section-inner shadow-sm rounded">
 							<h2 class="heading">Application Development</h2>
-							<div class="content">
+							<div class="content mx-5 mb-5">
 								<div class="item row">
 									<a class="col-md-4 col-12" onclick="showHide('hearthstone-card-search-details')" href="#">
 										<img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/hearthstone_card_search_screenshot.png" alt="project name" />
@@ -300,7 +285,21 @@
 					<section id="workxp" class="experience section">
 						<div class="section-inner shadow-sm rounded">
 							<h2 class="heading">Work Experience</h2>
-							<div class="content">
+							<div class="content mx-5 mb-5">
+								<div class="item">
+									<h3 class="title">Engineer - <span class="place"><a href="#">Infinity Ward</a></span> <span class="year">(Oct 2022 - Current)</span></h3>
+									<ul>
+										<li>UI Engineer on Modern Warfare 2, Warzone 2.0, and DMZ. Focus on Battle Pass development in Lua and C++. </li>
+										<li>Other technology used includes Perforce and Jira. </li>
+									</ul>
+								</div><!--//item-->							
+								<div class="item">
+									<h3 class="title">Software Engineer - Level Up U - <span class="place"><a href="#">Activision Blizzard</a></span> <span class="year">(Jul 2022 - Oct 2022)</span></h3>
+									<ul>
+										<li>Train for my future role as an Engineer at Activision Blizzard. This includes training in C++, Unreal Engine, and the Call of Duty Engine (IW Engine).</li>
+										<li>"Level Up U is a 3-month training program for engineering candidates who are passionate about Activision Blizzard games and want to launch their careers in the gaming industry." </li>
+									</ul>
+								</div><!--//item-->
 								<div class="item">
 									<h3 class="title">Full Stack Engineer - <span class="place"><a href="#">BriteCore</a></span> <span class="year">(2018 - 2020)</span></h3>
 									<ul>
@@ -368,11 +367,109 @@
 					</section><!--//section-->  
 				</div>
 				
-				<div id="the-altered-hand-details" style="display: none">	
+				<!-- Call of Duty: Modern Warfare 2 (2022) Details -->
+				<div id="codmw2-details" style="display: none">	
+				   <section class="latest section">
+						<div class="section-inner shadow-sm rounded">
+							<div class="content m-5">    
+								<div class="item featured text-center" >								
+									<div class="featured-image">
+										<img class="img-fluid rounded shadow-sm" src="assets/images/professional_game_dev/mw2_cover_art_w_info.png" alt="project name" />									
+									</div>
+									
+									<div class="desc text-start">                                    
+										<p>Joining Infinity Ward in 2022, I helped launch the core multiplayer of Call of Duty: Modern Warfare 2 along with the battle royale and DMZ modes.</p>
+										<p>My duties include:</p>
+										<ul>
+											<li>Create new menus</li>
+											<li>Fix various bugs ranging from minor inconveniences to game-breaking</li>
+											<li>Make UI changes to in-game elements as well as out-of-game menus</li>
+											<li>Focus on Battlepass</li>
+											<li>Work in Lua and C++</li>
+										</ul>
+									</div><!--//desc-->  
+
+									<div class="video-container">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/tnsOrbljnK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</div>								
+								</div><!--//item-->													   
+							</div><!--//content-->  
+						</div><!--//section-inner-->                
+					</section><!--//section-->  
+				</div>	
+
+				<!-- Forge Dwarf Details -->
+				<div id="forge-dwarf-details" style="display: none">	
+				   <section class="latest section">
+						<div class="section-inner shadow-sm rounded">
+							<div class="content m-5">    
+								<div class="item featured text-center" >									
+									<div class="featured-image">
+										<img class="img-fluid rounded shadow-sm" src="assets/images/projects/forge_dwarf_abilities.png" alt="project name" />									
+									</div>
+									
+									<h3 class="title mb-3">Forge Dwarf</h3>
+									<h6 class="mb-3">A simple Idle-RPG style game, made in Unity.</h6>
+		
+									<div class="desc text-start">                                    
+										<p>The game has the following features</p>
+										<ul>
+											<li>Character stats and skill points for upgrading</li>
+											<li>Weapons, tools, and equippable runes</li>
+											<li>Forge to craft items</li>
+											<li>Player abilities</li>
+											<li>Multiple regions, enemies, and resource types
+										</ul>
+									</div><!--//desc-->    
+
+									<div class="">
+										<img class="" style="max-width: 200px" src="assets/images/unity-mwu-black.png" alt="project name" />
+									</div>
+									
+									<a class="btn btn-cta-secondary" href="https://kent.itch.io/forge-dwarf" target="_blank"><i class="fas fa-gamepad"></i> Play on itch.io</a>
+								</div><!--//item-->													                								
+							</div><!--//content-->  
+						</div><!--//section-inner-->                
+					</section><!--//section-->  
+				</div>		
+
+
+				<!-- Yokai Match! Details -->
+				<div id="yokai-match-details" style="display: none">	
 				   <section class="latest section">
 						<div class="section-inner shadow-sm rounded">
 							<div class="content">    
-												   
+								<div class="item featured text-center m-5" >
+									
+									<div class="featured-image">
+										<img class="img-fluid rounded shadow-sm" src="assets/images/projects/yokai_match_combat.png" alt="project name" />									
+									</div>
+									
+									<h3 class="title mb-3">Yokai Match!</h3>
+									<h6 class="mb-3">A Match-3 game for Dungeon Crawler Jam 2022! (Made in Unity)</h6>
+		
+									<div class="desc text-start">                                    
+										<p>Working with another programmer and artist on this project, I focused on implementing the Match-3 combat section.</p>
+										<p>In addition to programming I was able to practice game design as well as integrating the artist's work into the project, along with animating.</p>
+									</div><!--//desc-->    
+
+									<div class="">
+										<img class="" style="max-width: 200px" src="assets/images/unity-mwu-black.png" alt="project name" />
+									</div>
+									
+									<a class="btn btn-cta-secondary" href="https://kent.itch.io/yokai-match" target="_blank"><i class="fas fa-gamepad"></i> Play on itch.io</a>								
+									
+								</div><!--//item-->													   
+							</div><!--//content-->  
+						</div><!--//section-inner-->                
+					</section><!--//section-->  
+				</div>									
+								
+				<!-- The Altered Hand Details -->
+				<div id="the-altered-hand-details" style="display: none">	
+				   <section class="latest section">
+						<div class="section-inner shadow-sm rounded">
+							<div class="content m-5">    												   
 								<div class="item featured text-center">
 									<div class="video-container">
 										<iframe width="560" height="315" src="https://www.youtube.com/embed/sFnVqQPf1PU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -991,6 +1088,7 @@ public class FireableWeapon : AbstractWeapon
 					</section><!--//section-->  
 				</div>		
 
+				<!-- Project Castaway -->
 				<div id="project-castaway-details" style="display: none">	
 				   <section class="latest section">
 						<div class="section-inner shadow-sm rounded">
@@ -1092,85 +1190,6 @@ public class FireableWeapon : AbstractWeapon
 				<!-- end single page details -->
 				
             </div><!--//primary-->
-			
-            <div class="secondary col-lg-4 col-12">
-                 <aside class="info aside section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading sr-only">Basic Information</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>Wisconsin, US</li>
-                                <li><i class="fas fa-envelope"></i><span class="sr-only">Email:</span>kentrosewi@gmail.com</li>
-                            </ul>
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </aside><!--//aside-->
-                
-                <aside class="skills aside section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Skills</h2>
-                        <div class="content">
-                            <div class="skillset">
-                               
-                                <div class="item">
-                                    <h3 class="level-title">Unity &amp; C#<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="You can use the tooltip to explain more about your skill level..."><i class="fas fa-info-circle"></i>Intermediate</span></h3>
-
-                                    <div class="level-bar progress">
-									    <div class="progress-bar level-bar-inner" role="progressbar" style="width: 65%" aria-valuenow="96"  aria-valuemin="0" aria-valuemax="96"></div>
-									</div><!--//level-bar-->                               
-                                </div><!--//item-->
-                                
-                                <div class="item">
-                                    <h3 class="level-title">Photoshop &amp; Illustrator<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="You can use the tooltip to explain more about your skill level..."><i class="fas fa-info-circle"></i>Intermediate</span></h3>
-                                    <div class="level-bar progress">
-									    <div class="progress-bar level-bar-inner" role="progressbar" style="width: 50%" aria-valuenow="94"  aria-valuemin="0" aria-valuemax="94"></div>
-									</div><!--//level-bar-->                                   
-                                </div><!--//item-->
-								
-                                <div class="item">
-                                    <h3 class="level-title">JavaScript, HTML, Python &amp; SQL<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="You can use the tooltip to explain more about your skill level..."><i class="fas fa-info-circle"></i>Intermediate</span></h3>
-                                    <div class="level-bar progress">
-									    <div class="progress-bar level-bar-inner" role="progressbar" style="width: 50%" aria-valuenow="94"  aria-valuemin="0" aria-valuemax="94"></div>
-									</div><!--//level-bar-->                                   
-                                </div><!--//item-->
-
-                                <p><a class="more-link" href="https://www.linkedin.com/in/kentrose/" target="_blank"><i class="fas fa-external-link-alt"></i>More on LinkedIn</a></p> 
-                            </div>              
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </aside><!--//section-->
-                
-                <aside class="testimonials aside section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Testimonials</h2>
-                        <div class="content">
-                            <div class="item">
-                                <blockquote class="quote">                                  
-                                    <p><i class="fas fa-quote-left"></i>Kent is very disciplined and professional. He is very task oriented and can handle multiple tasks at once. He was the team leader in multiple projects. There are many programming skills that Kent has including: Java, SQL, C++, Object-oriented programming, and others. He can easily pick up on other languages/skills without trouble. He is very dedicated and self-motivated.</p>
-                                </blockquote>                
-                                <p class="source"><span class="name">Daniel Meighen</span><br /><span class="title">Project Team Member</span></p>                                                             
-                            </div><!--//item-->
-                            
-                            <p><a class="more-link" href="https://www.linkedin.com/in/kentrose/" target="_blank"><i class="fas fa-external-link-alt"></i>More on LinkedIn</a></p> 
-                            
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-                
-                <aside class="education aside section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Education</h2>
-                        <div class="content">
-                            <div class="item">                      
-                                <h3 class="title"><i class="fas fa-graduation-cap"></i> B.S. in Computer Science with Minor in Design Arts</h3>
-
-                                <h4 class="university">UW - Green Bay <span class="year">(2015)</span> Summa Cum Laude <span class="year">(GPA: 4.0)</span></h4>
-                            </div><!--//item-->
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-              
-            </div><!--//secondary-->    
         </div><!--//row-->
     </div><!--//masonry-->
     
